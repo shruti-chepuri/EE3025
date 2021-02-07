@@ -94,10 +94,9 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-%\providecommand{\abs}[1]{\left\vert#1\right\vert}
-\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+%\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
 %\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
-%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
 %\providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
@@ -179,6 +178,27 @@ Substituting h(n) we have,
 2(\frac{1}{1-\frac{1}{2}}) = 4 < \infty
 \end{align}
 So, the system is stable.\\
+Verification in Z plane:\\ 
+When h(n) is bounded i.e
+\begin{align}
+\sum_{n=-\infty}^{\infty} |h(n)|  &< \infty \\
+\sum_{n=-\infty}^{\infty}|h(n)z^{-n}|_{|z|=1}&<\infty \\
+\sum_{n=-\infty}^{\infty}|h(n)z^{-n}|_{|z|=1}&<|\sum_{n=-\infty}^{\infty}h(n)z^{-n}|_{|z|=1} \\
+\implies |H(z)|_{|z|=1}&<\infty 
+\end{align}
+from triangle inequality. This shows us that the unit circle should lie in the ROC for the system to be stable. Now,
+\begin{align}
+H(z) = \frac{2(z^2+1)}{z(2z+1)} \\
+Poles = 0 , -\frac{1}{2} \\
+Zeros = +1j, -1j
+\end{align}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=10 cm]{EE3025/Assignment_1/figs/z_plane.eps}
+    \caption{Unit circle lies in ROC}
+    \label{zn}
+\end{figure} \\
+Hence from the Z plane plot the system is stable.\\
 Verification:\\
 BIBO Stability : For a given system and for every bounded input, if the output is bounded then it is stable. 
 For a system to be stable the output should be bounded for every bounded input.(BIBO stability).
@@ -190,10 +210,10 @@ Then by using the convolution property,
 \begin{align}
  |y(n)|= |\sum_{-\infty}^{\infty}h(k)x(n-k)|\\
  |y(n)| \leq B_x\sum_{-\infty}^{\infty}|h(k)|
- \end{align}
+\end{align}
  This holds only if
- \begin{align}
- \sum_{-\infty}^{\infty}|{h(n)}| < 
+\begin{align}
+\sum_{-\infty}^{\infty}|{h(n)}| < 
 \infty \\
 \text{then we have} |{y(n)}| \leq B_y < \infty 
 \end{align}
@@ -210,12 +230,11 @@ y(n)+\frac{1}{2}y(n-1) = x(n)+x(n-2)
     \label{xn}
 \end{figure}
 x(n) is bounded.\\
-From the python code,y(n) vanishes to zero as n tends to infinity. So the output is bounded.\\
 \begin{figure}[h!]
     \centering
     \includegraphics[width=10cm]{EE3025/Assignment_1/figs/y_n.eps}
     \caption{Bounded output}
     \label{yn}
 \end{figure} \\
-The system returns bounded output for the given bounded input. Implies, the system is stable.\\ Hence, verified.
+The system returns bounded output for the given bounded input. Implies, the system is stable.\\ 
 \end{document}
