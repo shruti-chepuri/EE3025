@@ -24,7 +24,8 @@ poles = plt.plot(p.real, p.imag, 'x',color='black')
 
 unit_circle = patches.Circle((0,0), radius=1, fill=False,color='black', ls='dashed')
 ax.add_patch(unit_circle)
-             
+
+r = 1.5 * np.amax(np.concatenate((abs(z), abs(p), [1])))             
 x = np.linspace(-2,2,100)  
     
 #Coloring the Roc      
@@ -40,6 +41,8 @@ ax.add_patch(roc)
 plt.xlim((-1.5, 1.5))
 plt.ylim((-1.5, 1.5))
 plt.title("H(z)")
+plt.axis('scaled')
+plt.axis([-r, r, -r, r])
 plt.text(0,0.1,"z=0")
 plt.text(0.6,0,"|z|>0.5")
 plt.text(0,1.1,"z=1j")
