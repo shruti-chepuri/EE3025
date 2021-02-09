@@ -1,12 +1,9 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-
 \usepackage{setspace}
 \usepackage{gensymb}
 \singlespacing
 \usepackage[cmex10]{amsmath}
-
 \usepackage{amsthm}
-
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -14,10 +11,8 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-
 \usepackage{longtable}
 \usepackage{multirow}
-
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -28,31 +23,25 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{graphicx}
 \usepackage{tkz-euclide}
-
 \usetikzlibrary{calc,math}
 \usepackage{listings}
-    \usepackage{color}                                            %%
-    \usepackage{array}                                            %%
-    \usepackage{longtable}                                        %%
-    \usepackage{calc}                                             %%
-    \usepackage{multirow}                                         %%
-    \usepackage{hhline}                                           %%
-    \usepackage{ifthen}                                           %%
-    \usepackage{lscape}     
+\usepackage{color}                                            %%
+\usepackage{array}                                            %%
+\usepackage{longtable}                                        %%
+\usepackage{calc}                                             %%
+\usepackage{multirow}                                         %%
+\usepackage{hhline}                                           %%
+\usepackage{ifthen}                                           %%
+\usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-
 \DeclareMathOperator*{\Res}{Res}
-
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
-
-
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -63,8 +52,6 @@ breaklines=true,
 columns=fullflexible
 }
 \begin{document}
-
-
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -72,7 +59,6 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -94,15 +80,16 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-%\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
-\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
-%\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\mean}[1]{E$\left[ #1 \right]$}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\cosec}{\,\text{cosec}\,}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
@@ -116,10 +103,10 @@ columns=fullflexible
 \let\vec\mathbf
 \renewcommand{\thefigure}{\theproblem}
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
-     \def\rightbox#1{\makebox[0in][r]{#1}}
-     \def\centbox#1{\makebox[0in]{#1}}
-     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
-     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{EE3025-Assignment 1}
 \author{C Shruti - EE18BTECH11006}
@@ -140,8 +127,8 @@ https://github.com/shruti-chepuri/EE3025/tree/main/Assignment_1
 \end{lstlisting}
 (5.3) The system h(n) is said to be stable if 
 \begin{align}
-\sum_{n=-\infty}^{\infty}{|h(n)|} < \infty
-\end{align}
+\sum_{n=-\infty}^{\infty} \abs{h(n)} < \infty
+\end{align} 
 Is the system defined by (3.2) stable for impulse response in (5.1)?
 \section{Solution}
 Given system: 
@@ -163,28 +150,28 @@ H(z) = \frac{1+z^{-2}}{1+\frac{1}{2}z^{-1}}
 \end{align}
 Impulse response of this system(h(n)):
 \begin{align}
-    h(n)= Z^{-1}(\frac{1}{1+\frac{1}{2}z^{-1}} + \frac{z^{-2}}{1+\frac{1}{2}z^{-1}})\\
-    h(n)=(\frac{-1}{2})^nu(n) + (\frac{-1}{2})^{n-2}u(n-2)
+h(n)= Z^{-1}\sbrak{\frac{1}{1+\frac{1}{2}z^{-1}} + \frac{z^{-2}}{1+\frac{1}{2}z^{-1}}}\\
+h(n)=\sbrak{\frac{-1}{2}}^nu(n) + \sbrak{\frac{-1}{2}}^{n-2}u(n-2)
 \end{align}
 Given stability criteria :
 \begin{align}
-\sum_{n=-\infty}^{\infty}{|h(n)|} < \infty
+\sum_{n=-\infty}^{\infty} \abs{h(n)} < \infty
 \end{align}
 Substituting h(n) we have,
 \begin{align}
-\sum_{n=-\infty}^{\infty}{|(\frac{-1}{2})^nu(n) + (\frac{-1}{2})^{n-2}u(n-2)|} < \infty \\
-\sum_{n=-\infty}^{\infty}{|(\frac{1}{2})^nu(n) + (\frac{1}{2})^{n-2}u(n-2)|} < \infty \\
-2\sum_{n=-\infty}^{\infty}{|(\frac{1}{2})^nu(n)|} < \infty \\
-2(\frac{1}{1-\frac{1}{2}}) = 4 < \infty
+\sum_{n=-\infty}^{\infty}\abs{\sbrak{\frac{-1}{2}}^nu(n) + \sbrak{\frac{-1}{2}}^{n-2}u(n-2)} < \infty \\
+\sum_{n=-\infty}^{\infty}\abs{\sbrak{\frac{1}{2}}^nu(n) + \sbrak{\frac{1}{2}}^{n-2}u(n-2)} < \infty \\
+2\sum_{n=-\infty}^{\infty}\abs{\sbrak{\frac{1}{2}}^nu(n)} < \infty \\
+2\sbrak{\frac{1}{1-\frac{1}{2}}} = 4 < \infty
 \end{align}
 So, the system is stable.\\
 Verification in Z plane:\\ 
 When h(n) is bounded i.e
 \begin{align}
-\sum_{n=-\infty}^{\infty} |h(n)|  &< \infty \\
-\sum_{n=-\infty}^{\infty}|h(n)z^{-n}|_{|z|=1}&<\infty \\
-\sum_{n=-\infty}^{\infty}|h(n)z^{-n}|_{|z|=1}&<|\sum_{n=-\infty}^{\infty}h(n)z^{-n}|_{|z|=1} \\
-\implies |H(z)|_{|z|=1}&<\infty 
+\sum_{n=-\infty}^{\infty} \abs{h(n)}  &< \infty \\
+\sum_{n=-\infty}^{\infty}\abs{h(n)z^{-n}}_{\abs{z}=1}&<\infty \\
+\sum_{n=-\infty}^{\infty}\abs{h(n)z^{-n}}_{\abs{z]=1}&<\abs{\sum_{n=-\infty}^{\infty}h(n)z^{-n}}_\abs{z}=1} \\
+\implies \abs{H(z)}_{\abs{z}=1}&<\infty 
 \end{align}
 from triangle inequality. This shows us that the unit circle should lie in the ROC for the system to be stable. Now,
 \begin{align}
@@ -208,14 +195,14 @@ Consider a bounded input sequence x(n)
 \end{align}
 Then by using the convolution property,
 \begin{align}
- |y(n)|= |\sum_{-\infty}^{\infty}h(k)x(n-k)|\\
- |y(n)| \leq B_x\sum_{-\infty}^{\infty}|h(k)|
+ \abs{y(n)}= \abs{\sum_{-\infty}^{\infty}h(k)x(n-k)}\\
+ \abs{y(n)} \leq B_x\sum_{-\infty}^{\infty}\abs{h(k)}
 \end{align}
  This holds only if
 \begin{align}
-\sum_{-\infty}^{\infty}|{h(n)}| < 
+\sum_{-\infty}^{\infty}\abs{h(n)} < 
 \infty \\
-\text{then we have} |{y(n)}| \leq B_y < \infty 
+\text{then we have} \abs{y(n)} \leq B_y < \infty 
 \end{align}
 Thus the output is bounded for bounded input if the impulse response is absolutely summable.\\
 Verification:- Given bounded input x(n).,
@@ -238,3 +225,4 @@ x(n) is bounded.\\
 \end{figure} \\
 The system returns bounded output for the given bounded input. Implies, the system is stable.\\ 
 \end{document}
+
