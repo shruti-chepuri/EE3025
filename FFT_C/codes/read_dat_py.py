@@ -7,12 +7,12 @@ import shlex
 #end if
 
 N = 8    #N point FFT
-f= np.loadtxt("C:\\Users\\tejas\\projects\\codes\\fft_values.dat")
+f= np.loadtxt("../codes/fft_values.dat")
 print(type(f))
 real_X=f[0::2]
 imag_X = f[1::2]
 plt.plot(f)
-plt.show()
+#plt.show()
 X = np.array(real_X)+1j*np.array(imag_X)
 plt.figure(figsize=(7,8))
 plt.subplot(2,1,1)
@@ -34,4 +34,4 @@ plt.savefig('../figs/fft_c.pdf')
 plt.savefig('../figs/fft_c.eps')
 #subprocess.run(shlex.split("termux-open ../figs/fft_c.pdf"))
 #else
-plt.show()
+#plt.show()
